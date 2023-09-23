@@ -17,21 +17,33 @@ const openai = new OpenAI({
     apiKey: fs.readFileSync("openai-key.txt", "utf8"),
 });
 
-const context = fs.readFileSync("output.txt", "utf8");
+const policies = fs.readFileSync("output.txt", "utf8");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Transcribe audio
+async function transcribeAudio(filename) {
+    const transcript = await openai.createTranscription(
+      fs.createReadStream(filename),
+      "whisper-1"
+    );
+    return transcript.data.text;
+}
+
+
 // Placeholder routes for audio processing and API calls
+
+const audio_filename = "audio_recording.mp3";
 
 // Route to receive and process the recorded audio
 app.post('/process-audio', (req, res) => {
+    process.stdout.write("sending to whisper: " + audio_file.name());
 
-    // Implement audio processing logic here
-    // Receive the audio file and perform necessary tasks
-    // Send back the results as a response
-    res.status(200).json({ message: 'Audio processing route placeholder' });
+    const transcribed_text = transcribeAudio(audio_file);
 });
+
+
 
 // Route to send transcription to GPT for summarization
 app.post('/send-to-gpt', (req, res) => {
@@ -51,11 +63,6 @@ app.post('/send-to-gpt', (req, res) => {
         stream: true,
         max_tokens: 150,
     });
-
-
-    // Receive the GPT response and process it
-    // Send back the summary and notes as a response
-    res.status(200).json({ message: 'GPT API call placeholder' });
 });
 
 app.listen(port, () => {
