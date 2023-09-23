@@ -17,7 +17,7 @@ const openai = new OpenAI({
     apiKey: fs.readFileSync("openai-key.txt", "utf8"),
 });
 
-const policies = fs.readFileSync("output.txt", "utf8");
+const context = fs.readFileSync("output.txt", "utf8");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -35,7 +35,24 @@ app.post('/process-audio', (req, res) => {
 
 // Route to send transcription to GPT for summarization
 app.post('/send-to-gpt', (req, res) => {
-    // Implement the code to send transcription to GPT for summarization
+    // let transcribed_text = you need to get the question from the transcription API
+    // send the user question to GPT
+    process.stdout.write("sending to gpt: " + transcribed_text);
+
+    const completion = openai.chat.completions.create({
+        model: "gpt-3.5-turbo",
+        messages: [
+            { role: "system", content: context },
+            {
+                role: "user",
+                content: transcribed_text,
+            },
+        ],
+        stream: true,
+        max_tokens: 150,
+    });
+
+
     // Receive the GPT response and process it
     // Send back the summary and notes as a response
     res.status(200).json({ message: 'GPT API call placeholder' });
