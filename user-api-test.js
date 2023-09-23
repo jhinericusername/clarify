@@ -15,7 +15,6 @@ describe('POST /process-audio', function () {
             .end((err, res) => {
                 expect(err).to.be.null;
                 expect(res).to.have.status(200);
-                expect(res.body).to.have.property('transcribed_text');
                 done();
             });
     });

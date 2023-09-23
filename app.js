@@ -22,11 +22,12 @@ app.use(express.urlencoded({ extended: true }));
 // Transcribe audio
 // Transcribe audio
 async function transcribeAudio(filename) {
-    const transcript = await openai.createTranscription(
-        fs.createReadStream(filename),
-        "whisper-1"
-    );
-    return transcript.data.text;
+    const transcript = await openai.audio.transcriptions.create({
+        file: fs.createReadStream(filename),
+        model: "whisper-1",
+    });
+    console.log(transcript.text);
+    return transcript.text;
 }
 
 app.get('/', (req, res) => {
@@ -72,7 +73,7 @@ app.post('/send-to-gpt', async (req, res) => {
         res.json({ success: true, gptResponse });
     } catch (error) {
         console.error("Error sending to GPT:", error);
-        res.status(500).json({ success: false, error: "GPT request failed" });
+        res.status(400).json({ success: false, error: "GPT request failed" });
     }
 });
 
