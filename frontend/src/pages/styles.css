@@ -1,0 +1,210 @@
+.body {
+    background-image: url(../assets/hand-drawn-school-and-education-seamless-pattern-1.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    height: 800px;
+    position: relative;
+    background-color: #ffffa1;
+    overflow: hidden;
+}
+
+.hero-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 6rem;
+    padding-top: 11rem;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+.uploadButton {
+    margin-left: 20px;
+    border-radius: 50%;
+    border: 2px #FF8C00 solid;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.uploadButton:hover {
+    transform: scale(1.1);
+    transition-property: transform;
+    transition-timing-function: ease-in;
+    transition-duration: 300ms;
+}
+
+.upload {
+    transform: scale(1.3);
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+}
+
+.hero-subtitle-1 {
+    color: #000000;
+    font-family: "Sookie", Helvetica;
+    font-size: 104px;
+    font-weight: 400;
+    letter-spacing: -2px;
+    line-height: 104px;
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.changing {
+    display: inline-block;
+
+}
+
+.hero-subtitle-2 {
+    -webkit-text-stroke: 2px #000000;
+    color: transparent;
+    font-family: "Sookie", Helvetica;
+    font-size: 104px;
+    font-weight: 400;
+    letter-spacing: -2px;
+    line-height: 104px;
+    margin-left: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.notie {
+    /* transform: scale(0.9); */
+    mix-blend-mode: darken;
+    position: relative;
+    top: -60%;
+    left: 50%
+}
+
+.element .group-2 {
+    height: 80px;
+    left: 0;
+    position: absolute;
+    top: 253px;
+    width: 408px;
+}
+
+.element .overlap-group-wrapper {
+    height: 80px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 310px;
+}
+
+.element .overlap-group {
+    background-color: #ff8c00;
+    border-radius: 100px;
+    height: 80px;
+    position: relative;
+    width: 308px;
+}
+
+.element .text-wrapper-3 {
+    color: #000000;
+    font-family: "Georgia-Regular", Helvetica;
+    font-size: 32px;
+    font-weight: 400;
+    height: 32px;
+    left: 43px;
+    letter-spacing: 0;
+    line-height: 32px;
+    position: absolute;
+    top: 24px;
+    white-space: nowrap;
+}
+
+.element .group-wrapper {
+    border: 3px solid;
+    border-color: #ff8c00;
+    border-radius: 40.17px;
+    height: 80px;
+    left: 328px;
+    position: absolute;
+    top: 0;
+    width: 80px;
+}
+
+.element .img {
+    height: 21px;
+    left: 23px;
+    position: absolute;
+    top: 27px;
+    width: 27px;
+}
+
+.element .frame-2 {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    left: 80px;
+    position: absolute;
+    top: 48px;
+    width: 1281px;
+}
+
+.element .text-wrapper-4 {
+    color: #000000;
+    font-family: "Sookie", Helvetica;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 40px;
+    position: relative;
+    transform: rotate(-1.5deg);
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.element .frame-3 {
+    align-items: flex-end;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 68px;
+    justify-content: center;
+    position: relative;
+}
+
+.element .text-wrapper-5 {
+    color: #000000;
+    font-family: "Georgia-Bold", Helvetica;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.7px;
+    line-height: 16px;
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.element .menu {
+    height: 17px;
+    margin-bottom: -0.5px;
+    margin-top: -0.5px;
+    position: relative;
+    width: 70px;
+}
+
+.element .image {
+    height: 695px;
+    left: 686px;
+    mix-blend-mode: darken;
+    object-fit: cover;
+    position: absolute;
+    top: 133px;
+    width: 695px;
+}

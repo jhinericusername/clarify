@@ -19,7 +19,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Transcribe audio
-// Transcribe audio
 async function transcribeAudio(filename) {
     const transcript = await openai.audio.transcriptions.create({
         file: fs.createReadStream(filename),
