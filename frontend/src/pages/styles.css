@@ -142,13 +142,31 @@
     margin-top: 15px;
 }
 
-.typing-box {
+.typing-box-1 {
     width: 530px;
     height: 300px;
     display: inline-block;
     border: 1px #FF8C00;
+    font-family: 'Nunito';
     /* position: relative;
     top: 20%; */
+}
+
+.typing-box-2 {
+    width: 530px;
+    height: 300px;
+    display: inline-block;
+    border: 1px #FF8C00;
+    font-family: 'Nunito';
+    /* position: relative;
+    top: 20%; */
+}
+
+.text-heading {
+    font-family: 'Sookie';
+    position: absolute;
+    /* left: 0%; */
+    top: -50px
 }
 
 .pitchButton, .summaryButton {
@@ -182,8 +200,17 @@
     justify-content: center;
     flex-direction: column;
     position: relative;
+    left: 1.25%;
+    top: 10%;
+}
+
+.pitch-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
     left: 7%;
-    top: 20%;
+    top: 40%;
 }
 
 .textButtons {

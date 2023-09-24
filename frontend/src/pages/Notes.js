@@ -13,7 +13,7 @@ const Notes = () => {
 
     const dotLimit = 4;
     let pitch = "theraview is cool"
-    let summary = "theraview is reallllllllllly cool"
+    let notes = "theraview is reallllllllllly cool"
     let text = "theraview is an artificial intelligence-based medical tool for those who are in physical therapy and may need more assistance performing exercises at home."
 
     useEffect(() => {
@@ -54,12 +54,20 @@ const Notes = () => {
                     </div>
                     :
                     <div className='loaded-container'>
-                        <div className='typing-box'>
+                        <TypeAnimation
+                            sequence={[
+                                "Notes", 1
+                            ]}
+                            speed={20}
+                            style={{ fontSize: '40px' }}
+                            cursor={false}
+                            className='text-heading' />
+                        <div className='typing-box-1'>
                             <TypeAnimation
                                 sequence={[
-                                    text, 1
+                                    notes,
                                 ]}
-                                speed={40}
+                                speed={60}
                                 style={{ fontSize: '22px' }} />
                             {/* loading OR moving text box  530w 410h*/}
                         </div>
@@ -69,8 +77,26 @@ const Notes = () => {
                         </div> */}
                     </div>
                 }
-
             </div>
+            {/* <div className="pitch-box">
+                <TypeAnimation
+                    sequence={[
+                        "Pitch", 1
+                    ]}
+                    speed={20}
+                    style={{ fontSize: '40px' }}
+                    cursor={false}
+                    className='pitch-heading' />
+
+                <div className='typing-box-2'>
+                    <TypeAnimation
+                        sequence={[
+                            pitch,
+                        ]}
+                        speed={60}
+                        style={{ fontSize: '22px' }} />
+                </div>
+            </div> */}
 
             <img src='/notie.png' alt='duck' className='notie2' />
         </div>
