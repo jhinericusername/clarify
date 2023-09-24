@@ -4,7 +4,6 @@ import { FiUpload } from 'react-icons/fi'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-
 import './styles.css'
 
 const Home = () => {

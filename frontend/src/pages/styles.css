@@ -23,10 +23,11 @@
 
 .buttonBar {
     margin-top: 10px;
-    width: 420px;
-    height: 90px;
+    width: 200px;
+    height: 45px;
     background-color: #FF8C00;
     border-radius: 100px;
+    font-family: 'Nunito';
 }
 
 .uploadButton {
@@ -128,10 +129,72 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .time {
     font-size: 22px;
     position: relative;
     right: 30%;
+}
+
+.recorder {
+    margin-top: 15px;
+}
+
+.typing-box {
+    width: 530px;
+    height: 300px;
+    display: inline-block;
+    border: 1px #FF8C00;
+    /* position: relative;
+    top: 20%; */
+}
+
+.pitchButton, .summaryButton {
+    margin-left: 20px;
+    border-radius: 90px;
+    background-color: #FF8C00;
+    width: 180px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pitchButton:hover, .summaryButton:hover {
+    transform: scale(1.1);
+    transition-property: transform;
+    transition-timing-function: ease-in;
+    transition-duration: 300ms;
+}
+
+.loaded-container {
+    position: absolute;
+    left: 90px;
+    margin-top: 20rem;
+}
+
+.notes-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    left: 7%;
+    top: 20%;
+}
+
+.textButtons {
+    display: flex;
+    align-items: center;
+}
+
+.notie2 {
+        /* transform: scale(0.9); */
+        mix-blend-mode: darken;
+        position: absolute;
+        top: 5%;
+        left: 50%
 }

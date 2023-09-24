@@ -39,7 +39,7 @@
     padding-left: 55rem;
     color: black;
     font-size: 16px;
-    font-family: Georgia;
+    font-family: "Nunito";
     font-weight: 700;
     line-height: 16px;
     word-wrap: break-word
@@ -59,6 +59,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Nunito';
 }
 
 .recordButton:hover {
