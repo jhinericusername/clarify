@@ -34,8 +34,8 @@ async function OrganizeNotes(context, transcribed_text) {
     const notes = await openai.chat.completions.create({
         model: "gpt-3.5-turbo",
         messages: [
-            { role: "system", content: context },
-            { role: "user", content: transcribed_text },
+            { role: "assistant", content: context},
+            { role: "user", content: transcribed_text},
         ],
     });
     return notes.choices[0].message.content;
@@ -43,7 +43,7 @@ async function OrganizeNotes(context, transcribed_text) {
 
 
 // Route to receive and process the recorded audio
-app.post('/process-audio', async (req, res) => {
+app.get('/process-audio', async (req, res) => {
 
     const audio_filename = `C:\\Users\\chtun\\Downloads\\audio.webm`;
     // Transcribe the audio and process success or failure events

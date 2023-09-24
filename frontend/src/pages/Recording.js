@@ -23,20 +23,6 @@ const Recording = () => {
     }
 
     function handleSubmit(e) {
-        fetch("http://localhost:1337/process-audio")
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                console.log(response.message)
-                return response.json(); // Parse the JSON response
-            })
-            .catch((error) => {
-                // Handle any errors that occurred during the request
-                console.error('Error:', error);
-            });
-
-
         e.preventDefault()
         navigate('/notes')
     }

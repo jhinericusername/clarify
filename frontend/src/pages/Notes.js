@@ -8,28 +8,59 @@ import './styles.css'
 
 const Notes = () => {
     const [dots, setDots] = useState(1);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const [notes, setNotes] = useState("theraview")
     // const [text, setText] = useState("")
 
     const dotLimit = 4;
     let pitch = "theraview is cool"
-    let notes = "theraview is reallllllllllly cool"
+    // let notes = "theraview is reallllllllllly cool"
     let text = "theraview is an artificial intelligence-based medical tool for those who are in physical therapy and may need more assistance performing exercises at home."
+    let ignore = false;
 
     useEffect(() => {
+        if (!ignore) {
+            // query GPT here (i.e. look for audio file and process)
+            // assign values to pitch and summary variables
+           links()
 
-        // query GPT here (i.e. look for audio file and process)
-        // assign values to pitch and summary variables
-
+        }
 
         const dotCount = setInterval(() => {
             setDots((prev) => (prev + 1) % dotLimit)
         }, 1000)
 
         return () => {
+            
             clearInterval(dotCount)
         }
-    })
+    }, []);
+
+    const links = async () => {
+        let result = ''
+        fetch("http://localhost:1337/process-audio")
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            ignore = true;
+            return response.json(); // Parse the JSON response
+        })
+        .then((data) => {
+            // Access the 'message' field from the JSON data
+            result = data.message;
+            setNotes(result)
+            setLoading(false);
+
+            // Now, you can use the 'message' variable in your component
+            console.log(notes);
+          })
+        .catch((error) => {
+            // Handle any errors that occurred during the request
+            console.error('Error:', error);
+        });
+
+    }
 
     // function handlePitch() { 
     //     setText(pitch)
@@ -65,7 +96,7 @@ const Notes = () => {
                         <div className='typing-box-1'>
                             <TypeAnimation
                                 sequence={[
-                                    notes,
+                                    (notes), 1
                                 ]}
                                 speed={60}
                                 style={{ fontSize: '22px' }} />
