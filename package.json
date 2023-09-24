@@ -1,13 +1,16 @@
 {
   "dependencies": {
     "chai": "^4.3.8",
+    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "fluent-ffmpeg": "^2.1.2",
     "fs": "^0.0.1-security",
     "http": "^0.0.1-security",
     "mocha": "^10.2.0",
     "openai": "^4.10.0",
-    "socket.io": "^4.7.2"
+    "socket.io": "^4.7.2",
+    "stream": "^0.0.2"
   },
   "devDependencies": {
     "chai-http": "^4.4.0"
