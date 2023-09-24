@@ -1,12 +1,11 @@
-import Navbar from './components/Navbar';
 import Home from './pages/Home';
+import Recording from './pages/Recording';
 import { Route, Routes } from "react-router-dom";
 
 function App() {
 
 	return (
 		<div>
-			<Navbar/>
 			<Routes>
 				<Route path='/' element={<Home/>} />
 				<Route path='/recording' element={<Recording/>} />

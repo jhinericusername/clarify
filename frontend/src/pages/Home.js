@@ -1,5 +1,5 @@
-import Navbar from '../components/Navbar'
 import RecordButton from '../components/RecordButton'
+import Navbar from '../components/Navbar'
 import { FiUpload } from 'react-icons/fi'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -21,16 +21,15 @@ const Home = () => {
 		}
 	}, [])
 
-	function handleRecord() {
-			if (!error) {
-				e.preventDefault()
-				navigate('/recording')
-			}
-		
+	function handleRecord(e) {
+		e.preventDefault()
+		navigate('/recording')
 	}
 
 	return (
 		<div className='body'>
+			<Navbar/>
+
 			{/* Hero */}
 			<div className='hero'>
 				<div className="hero-title">

@@ -21,6 +21,14 @@
     align-items: center;
 }
 
+.buttonBar {
+    margin-top: 10px;
+    width: 420px;
+    height: 90px;
+    background-color: #FF8C00;
+    border-radius: 100px;
+}
+
 .uploadButton {
     margin-left: 20px;
     border-radius: 50%;
@@ -89,122 +97,41 @@
     left: 50%
 }
 
-.element .group-2 {
-    height: 80px;
-    left: 0;
-    position: absolute;
-    top: 253px;
-    width: 408px;
-}
-
-.element .overlap-group-wrapper {
-    height: 80px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 310px;
-}
-
-.element .overlap-group {
-    background-color: #ff8c00;
-    border-radius: 100px;
-    height: 80px;
-    position: relative;
-    width: 308px;
-}
-
-.element .text-wrapper-3 {
-    color: #000000;
-    font-family: "Georgia-Regular", Helvetica;
-    font-size: 32px;
-    font-weight: 400;
-    height: 32px;
-    left: 43px;
-    letter-spacing: 0;
-    line-height: 32px;
-    position: absolute;
-    top: 24px;
-    white-space: nowrap;
-}
-
-.element .group-wrapper {
-    border: 3px solid;
-    border-color: #ff8c00;
-    border-radius: 40.17px;
-    height: 80px;
-    left: 328px;
-    position: absolute;
-    top: 0;
-    width: 80px;
-}
-
-.element .img {
-    height: 21px;
-    left: 23px;
-    position: absolute;
-    top: 27px;
-    width: 27px;
-}
-
-.element .frame-2 {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    left: 80px;
-    position: absolute;
-    top: 48px;
-    width: 1281px;
-}
-
-.element .text-wrapper-4 {
-    color: #000000;
-    font-family: "Sookie", Helvetica;
-    font-size: 40px;
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: 40px;
-    position: relative;
-    transform: rotate(-1.5deg);
-    white-space: nowrap;
-    width: fit-content;
-}
-
-.element .frame-3 {
-    align-items: flex-end;
-    display: inline-flex;
-    flex: 0 0 auto;
-    gap: 68px;
-    justify-content: center;
-    position: relative;
-}
-
-.element .text-wrapper-5 {
-    color: #000000;
-    font-family: "Georgia-Bold", Helvetica;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: -0.7px;
-    line-height: 16px;
-    margin-top: -1px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
-}
-
-.element .menu {
-    height: 17px;
-    margin-bottom: -0.5px;
-    margin-top: -0.5px;
-    position: relative;
-    width: 70px;
-}
-
-.element .image {
-    height: 695px;
-    left: 686px;
+.notieGIF {
+    /* transform: scale(0.9); */
     mix-blend-mode: darken;
-    object-fit: cover;
-    position: absolute;
-    top: 133px;
-    width: 695px;
+    position: relative;
+    top: -70%;
+    left: 50%;
+    transform: scale(0.8);
+}
+
+.soundbar {
+    transform: scale(0.15);
+    mix-blend-mode: darken;
+}
+
+.stopRecording {
+    transform: scale(2.0);
+    position: relative;
+    left: 35%;
+}
+
+.stopRecording:hover {
+    transform: scale(2.5);
+    transition-property: transform;
+    transition-timing-function: ease-in;
+    transition-duration: 300ms;
+}
+
+.buttonBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.time {
+    font-size: 22px;
+    position: relative;
+    right: 30%;
 }
