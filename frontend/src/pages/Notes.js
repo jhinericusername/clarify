@@ -98,7 +98,7 @@ const Notes = () => {
                 </div>
             </div> */}
 
-            <img src='/notie.png' alt='duck' className='notie2' />
+            <img src='/notieThumbs.png' alt='duck' className='notieThumbs' />
         </div>
     )
 }

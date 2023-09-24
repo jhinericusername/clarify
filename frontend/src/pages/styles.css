@@ -218,10 +218,11 @@
     align-items: center;
 }
 
-.notie2 {
-        /* transform: scale(0.9); */
-        mix-blend-mode: darken;
-        position: absolute;
-        top: 5%;
-        left: 50%
+.notieThumbs {
+    transform: scaleX(-1) scale(0.6);
+
+    mix-blend-mode: darken;
+    position: absolute;
+    top: -15%;
+    left: 35%
 }
