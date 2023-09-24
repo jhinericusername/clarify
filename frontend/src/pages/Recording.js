@@ -18,15 +18,29 @@ const Recording = () => {
         setAudioUrl(url);
     };
 
-    function handleRecording() { 
+    function handleRecording() {
         setIsRecording(true)
     }
 
     function handleSubmit(e) {
+        fetch("http://localhost:1337/process-audio")
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                console.log(response.message)
+                return response.json(); // Parse the JSON response
+            })
+            .catch((error) => {
+                // Handle any errors that occurred during the request
+                console.error('Error:', error);
+            });
+
+
         e.preventDefault()
         navigate('/notes')
     }
- 
+
     function formatTime(seconds) {
         const minutes = Math.floor(seconds / 60);
         const remainingSeconds = seconds % 60;
@@ -43,37 +57,37 @@ const Recording = () => {
                     <div className="hero-subtitle-1">
                         {isRecording ? "Recording in" : "Press record"}
                     </div>
-                    <div className="hero-subtitle-2">                        
+                    <div className="hero-subtitle-2">
                         {isRecording ? "progress" : "below  "}
                     </div>
                     {/* <div className='buttonBar'> */}
-                        {/* <div className='stopRecording'>
+                    {/* <div className='stopRecording'>
                             <BsFillStopCircleFill />
                         </div>
                         <img src="soundbar.gif" className='soundbar' /> */}
-                        {/* <div className='time'> */}
-                            {/* {formatTime(time)} */}
-                        {/* </div> */}
-                        <div className="recorder" onClick={handleRecording}>
-                            <AudioRecorder
-                                onRecordingComplete={handleRecordingComplete}
-                                audioTrackConstraints={{
-                                    noiseSuppression: true,
-                                    echoCancellation: true,
-                                }}
-                                downloadOnSavePress={true}
-                                downloadFileExtension="mp3"
-                                showVisualizer={true}
-                            />
+                    {/* <div className='time'> */}
+                    {/* {formatTime(time)} */}
+                    {/* </div> */}
+                    <div className="recorder" onClick={handleRecording}>
+                        <AudioRecorder
+                            onRecordingComplete={handleRecordingComplete}
+                            audioTrackConstraints={{
+                                noiseSuppression: true,
+                                echoCancellation: true,
+                            }}
+                            downloadOnSavePress={true}
+                            downloadFileExtension="mp3"
+                            showVisualizer={true}
+                        />
 
-                            {audioUrl && (
-                                <audio controls src={audioUrl}></audio>
-                            )}
-                        </div>
+                        {audioUrl && (
+                            <audio controls src={audioUrl}></audio>
+                        )}
+                    </div>
 
-                        <div onClick={handleSubmit} className='buttonBar'>
-                                Submit
-                        </div>
+                    <div onClick={handleSubmit} className='buttonBar'>
+                        Submit
+                    </div>
 
                     {/* </div> */}
                 </div>
